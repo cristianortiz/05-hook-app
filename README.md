@@ -17,3 +17,7 @@ based on useEffect we create the useFetch custom hook to request an API and the 
 smalls apps based on hooks and custom hooks
 
 - MultipleCustomHook : A Breaking Bad Quotes API, implemented using the useFetch and useCounter custom hooks to request the API and load a new quote
+
+## 04-useRef
+
+useRef basic example, used to improve the useFetch custom hook allow to conditionnaly load it when the component who call this useFetch custom hook is mounted, and avoid render it if the component (who is call it) is unmounted
