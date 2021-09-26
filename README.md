@@ -4,16 +4,16 @@ Examples of the main React Hooks, to demonstrate how to use them in small projec
 
 ## src/components
 
-## 01-UseState
+## 01-useState
 
 based on useState we create the useCounter custom hook to increase a counter
 
 ## 02-useEffect
 
-based on useEffect we create the useFetch custom hook to request an API
+based on useEffect we create the useFetch custom hook to request an API and the useForm custom hook to state and keep track of a form include the state and handleInput and handleSubmit functions
 
 ## 03-samples
 
-smalls app based on hooks an custom hooks
+smalls apps based on hooks and custom hooks
 
-- MultipleCustomHook : A Breaking Bad Quotes API, implemented usgin the useFetch and useCounter custom hook to request the API and load a new quote
+- MultipleCustomHook : A Breaking Bad Quotes API, implemented using the useFetch and useCounter custom hooks to request the API and load a new quote
