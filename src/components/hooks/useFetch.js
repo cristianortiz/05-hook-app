@@ -11,12 +11,13 @@ const useFetch = (url) => {
   //this effects is triggered when this component load the first time
   useEffect(() => {
     //when this component will be unMounted change the isMounted bool to false
-    //and prevent to call and render the component again
+    //and prevent to call and render the component inside another unmounted component
     return () => {
+      //keep the reference when the component is umounted
       isMounted.current = false;
     };
   }, []);
-
+  //this other effect triggers when url is changed in the component wich call useFetch
   useEffect(() => {
     //for showing 'Loading..' before a new quote is loaded from api
     setState({ data: null, loading: true, error: null });
@@ -37,7 +38,7 @@ const useFetch = (url) => {
               "setState is not called, component correctly unMounted"
             );
           }
-        }, 2000);
+        }, 1000);
       });
   }, [url]);
   return state;

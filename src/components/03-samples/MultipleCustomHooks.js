@@ -5,7 +5,8 @@ import useFetch from "../hooks/useFetch";
 const MultipleCustomHooks = () => {
   //the value o counter will be the 'id'parameter for API url
   const { counter, increment } = useCounter(1);
-  //api retrieved data requested by custom hook
+  //api retrieved data requested by custom hook, remember, a change in url
+  //will trigger the second useEffect in useFetch custom hook and call the API again
   const { loading, data } = useFetch(
     `https://www.breakingbadapi.com/api/quotes/${counter}`
   );

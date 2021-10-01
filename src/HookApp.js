@@ -1,6 +1,7 @@
 import React from "react";
 //import FocusScreen from "./components/04-useRef/FocusScreen";
-import RealRefExample from "./components/04-useRef/RealRefExample";
+// import RealRefExample from "./components/04-useRef/RealRefExample";
+import { Memorize } from "./components/06-memos/Memorize";
 //import MultipleCustomHooks from "./components/03-samples/MultipleCustomHooks";
 //import CounterApp from "./components/01-useState/CounterApp";
 //import CounterCustomHook from "./components/01-useState/CounterCustomHook";
@@ -16,7 +17,8 @@ const HookApp = () => {
       {/* <FormCustomHook /> */}
       {/* <MultipleCustomHooks /> */}
       {/* <FocusScreen /> */}
-      <RealRefExample />
+      {/* <RealRefExample /> */}
+      <Memorize />
     </>
   );
 };

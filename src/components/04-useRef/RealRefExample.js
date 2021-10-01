@@ -7,14 +7,14 @@ const RealRefExample = () => {
 
   return (
     <div style={{ padding: 50 }}>
-      <h1>Real useRef Example</h1>
-      <p>Using MultipleCustomHooks app</p>
+      <h2>Real useRef Example</h2>
+
       {show && <MultipleCustomHooks />}
       <button
         className="btn btn-outline-primary mt-3"
         onClick={() => setShow(!show)}
       >
-        Show/Hide
+        Show / Hide
       </button>
     </div>
   );
