@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 //memo render the component only if any of this properties has changed
 // other wise returns a 'recorded' version of the component and avoid unnecesary re-renders
 export const Small = React.memo(({ value }) => {
