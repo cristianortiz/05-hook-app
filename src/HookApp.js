@@ -1,5 +1,7 @@
 import React from "react";
-import { CallbackHook } from "./components/06-memos/CallbackHook";
+//import { CallbackHook } from "./components/06-memos/CallbackHook";
+//import { Padre } from "./components/07-tarea-memo/Padre";
+import TodoApp from "./components/08-useReducer/TodoApp";
 // import { MemoHook } from "./components/06-memos/MemoHook";
 //import FocusScreen from "./components/04-useRef/FocusScreen";
 // import RealRefExample from "./components/04-useRef/RealRefExample";
@@ -22,7 +24,8 @@ const HookApp = () => {
       {/* <RealRefExample /> */}
       {/* <Memorize /> */}
       {/* <MemoHook /> */}
-      <CallbackHook />
+      {/* <CallbackHook /> */}
+      <TodoApp />
     </>
   );
 };

@@ -1,6 +1,4 @@
 import React from "react";
-//this child comp of callbackHook comp receive the increment function memoized
-// as reference
 export const ShowIncrement = React.memo(({ increment }) => {
   console.log("I was called and render again");
 

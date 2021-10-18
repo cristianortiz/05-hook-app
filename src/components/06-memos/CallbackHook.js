@@ -16,13 +16,14 @@ export const CallbackHook = () => {
     [setCounter]
   );
 
-  //another use case is when a useEffect has a function has dependency, in that case
-  //send that function as argument with useCallback from a parent
   return (
     <div>
       <h2>useCallback Hook Example: {counter}</h2>
       <hr></hr>
+      {/* the function increment() is sended it as argument */}
       <ShowIncrement increment={increment} />
     </div>
   );
 };
+//another use case is when a useEffect has a function has dependency, in that case
+//send that function as argument with useCallback from a parent
