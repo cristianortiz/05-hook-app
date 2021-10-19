@@ -2,9 +2,10 @@
 export const todoReducer = (state = [], action) => {
   switch (action.type) {
     case "add":
-      break;
+      //add to state a new task of TODO list
+      return [...state, action.payload];
 
     default:
-      break;
+      return state;
   }
 };

@@ -3,16 +3,19 @@ import { useState } from "react";
 const useForm = (initialState = {}) => {
   const [values, setValues] = useState(initialState);
 
+  //to reset a form
+  const reset = () => {
+    setValues(initialState);
+  };
+
   const handleInputChange = (e) => {
     setValues({
       ...values,
       [e.target.name]: e.target.value,
     });
   };
-  const handleSubmit = (submitedValues) => {
-    console.log(submitedValues);
-  };
-  return [values, handleInputChange, handleSubmit];
+
+  return [values, handleInputChange, reset];
 };
 
 export default useForm;
