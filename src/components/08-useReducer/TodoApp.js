@@ -2,6 +2,7 @@ import React, { useEffect, useReducer } from "react";
 import { todoReducer } from "./todoReducer";
 import useForm from "../hooks/useForm";
 import "./styleTodo.css";
+import TodoList from "./TodoList";
 
 //this  function defines the initialState of the reducer
 const init = () => {
@@ -31,6 +32,22 @@ const TodoApp = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
+  const handleDelete = (id) => {
+    //console.log("this is ", id);
+    //delete action
+    const action = {
+      type: "delete",
+      payload: id,
+    };
+    //call de dispatch to send action to reducer
+    dispatch(action);
+  };
+  const handleToggle = (id) => {
+    dispatch({
+      type: "toggle",
+      payload: id,
+    });
+  };
   //function to process form submit event
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,7 +61,6 @@ const TodoApp = () => {
       desc: description,
       done: false,
     };
-
     //define the action
     const action = {
       type: "add",
@@ -52,7 +68,7 @@ const TodoApp = () => {
     };
     //call de dispatch to send action to reducer
     dispatch(action);
-    //reset the form
+    //reset the form usgina function from useForm hook
     reset();
   };
 
@@ -62,16 +78,11 @@ const TodoApp = () => {
       <hr />
       <div className="row">
         <div className="col-7">
-          <ul className="list-group list-group-flush">
-            {todos.map((todo, i) => (
-              <li key={todo.id} className="list-group-item">
-                <p className="text-center">
-                  {i + 1}. {todo.desc}
-                </p>
-                <button className="btn btn-danger">Delete</button>
-              </li>
-            ))}
-          </ul>
+          <TodoList
+            todos={todos}
+            handleDelete={handleDelete}
+            handleToggle={handleToggle}
+          />
         </div>
         <div className="col-5">
           <h3>Add TODO</h3>
