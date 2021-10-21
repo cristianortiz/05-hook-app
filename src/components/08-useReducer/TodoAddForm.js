@@ -22,7 +22,7 @@ const TodoAddForm = ({ handleAddTodo }) => {
     };
     //add the new to using function referenced from TodoApp />
     handleAddTodo(newTodo);
-    //reset the form usgina function from useForm hook
+    //reset the form using function from useForm hook
     reset();
   };
 
