@@ -1,9 +1,14 @@
 import React from "react";
+import AppRouter from "./AppRouter";
+import UserContext from "./UserContext";
 
 const MainApp = () => {
+  const user = { id: 123, name: "joni" };
   return (
     <div>
-      <h1>Main App</h1>
+      <UserContext.Provider value={user}>
+        <AppRouter />
+      </UserContext.Provider>
     </div>
   );
 };
