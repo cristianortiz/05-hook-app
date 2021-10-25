@@ -15,13 +15,15 @@ const AppRouter = () => {
     <Router>
       <>
         <NavBar />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/login" component={Login} />
-          {/* default route, similar to a 404 page error */}
-          <Redirect to="/" />
-        </Switch>
+        <div className="container">
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/login" component={Login} />
+            {/* default route, similar to a 404 page error */}
+            <Redirect to="/" />
+          </Switch>
+        </div>
       </>
     </Router>
   );
