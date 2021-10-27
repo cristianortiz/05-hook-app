@@ -26,19 +26,27 @@ const useFetch = (url) => {
       .then((data) => {
         //use this timeOut to check if the component is correctly unMounted using useRef hook
         //should not be  any error in console
-        setTimeout(() => {
-          if (isMounted.current) {
-            setState({
-              loading: false,
-              error: null,
-              data,
-            });
-          } else {
-            console.log(
-              "setState is not called, component correctly unMounted"
-            );
-          }
-        }, 1000);
+        // setTimeout(() => {
+        if (isMounted.current) {
+          setState({
+            loading: false,
+            error: null,
+            data,
+          });
+          // } else {
+          //   console.log(
+          //     "setState is not called, component correctly unMounted"
+          //   );
+          // }
+          //}, 1000);
+        }
+      })
+      .catch(() => {
+        setState({
+          loading: false,
+          data: null,
+          error: "There is an error loading data",
+        });
       });
   }, [url]);
   return state;

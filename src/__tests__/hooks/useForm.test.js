@@ -23,7 +23,6 @@ describe("Test in useForm custom hook", () => {
     const [, handleInputChange] = result.current;
     const newValues = {
       name: "goku",
-      email: "goku@email.com",
     };
     act(() => {
       handleInputChange({
@@ -37,8 +36,27 @@ describe("Test in useForm custom hook", () => {
     console.log(values);
     //test if values.name has change
     expect(values.name).toEqual(newValues.name);
-    //expect(values.email).toEqual(newValues.email);
+    //another way, test if the other properties in values has not change
+    expect(values).toEqual({ ...values, name: newValues.name });
   });
 
-  test("reset() should reset the form", () => {});
+  test("reset() should reset the form", () => {
+    const { result } = renderHook(() => useForm(initialForm));
+    const [, handleInputChange, reset] = result.current;
+    const newValues = {
+      name: "goku",
+    };
+    //to test reset() call it in act()
+    act(() => {
+      handleInputChange({
+        target: {
+          name: "name",
+          value: newValues.name,
+        },
+      });
+      reset();
+    });
+    const [values] = result.current;
+    expect(values).toEqual(initialForm);
+  });
 });
