@@ -18,7 +18,6 @@ describe("test in <TodoListItem />", () => {
       />
     );
     expect(screen.getByText("1. Learn React")).toBeInTheDocument();
-    //screen.debug();
   });
 
   test("should call handleDelete function", () => {
@@ -44,9 +43,17 @@ describe("test in <TodoListItem />", () => {
         handleToggle={handleToggle}
       />
     );
-    //thisf
+    //get the text inside the paragrahp wich is clickeable
     const par = screen.getByText("1. Learn React");
     userEvent.click(par);
     expect(handleToggle).toHaveBeenCalledWith(1);
+  });
+
+  test("should show the change of 'done' Todo property in class 'complete'", () => {
+    const todo = demoTodos[0];
+    todo.done = true;
+    render(<TodoListItem todo={todo} i={0} />);
+    expect(screen.getByText("1. Learn React")).toHaveClass("complete");
+    screen.debug();
   });
 });
