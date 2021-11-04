@@ -18,7 +18,7 @@ describe("Tests in <Login />", () => {
     expect(screen.getByText("Login Page").tagName).toBe("H1");
   });
 
-  test("should call setUSer with the right argument ", () => {
+  test("should call setUSer with the right arguments ", () => {
     render(
       <UserContext.Provider value={{ setUser }}>
         <Login />
